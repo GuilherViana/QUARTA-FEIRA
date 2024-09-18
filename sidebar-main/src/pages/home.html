@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <div id="sidebar_content">
+      <ul id="side_items">
+        <li class="side-item active">
+          <a href="home.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="item-description">Página Inicial</span>
+          </a>
+        </li>
+        <li class="side-item">
+          <a href="perfil.html">
+            <i class="fa-solid fa-user"></i>
+            <span class="item-description">Usuário</span>
+          </a>
+        </li>
+        <li class="side-item">
+          <a href="notificacoes.html">
+            <i class="fa-solid fa-bell"></i>
+            <span class="item-description">Notificações</span>
+          </a>
+        </li>
+        <li class="side-item">
+          <a href="suporte.html">
+            <i class="fa-solid fa-box"></i>
+            <span class="item-description">Suporte</span>
+          </a>
+        </li>
+      </ul>
+      <button id="open_btn">
+        <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    <div id="logout">
+      <button id="logout_btn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="item-description">Logout</span>
+      </button>
+    </div>
+  </nav>
+  <div id="main_content">
+    <div class="container">
+      <!-- Barra de Pesquisa -->
+    <div class="search-bar">
+      <input type="text" placeholder="Digite sua busca...">
+      <button type="submit">Buscar</button>
+    </div>
+    <!-- Título Principal -->
+    <main>
+      <h1 class="tittle">iGlem</h1>
+    </main>
+    <!-- Botões de Ações -->
+    <div class="button-container">
+      <button class="rectangle-button">Recentes <i class="fa-regular fa-clock"></i></button>
+      <button class="rectangle-button">Favoritos <i class="fa-solid fa-star"></i></button>
+      <button class="rectangle-button">Upload <i class="fa-solid fa-plus"></i></button>
+    </div>
+    </div>
+    
+  </div>
+  <script src="../javascript/script.js"></script>
+  
+</body>
+</html>

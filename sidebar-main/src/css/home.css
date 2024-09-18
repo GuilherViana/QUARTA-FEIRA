@@ -1,0 +1,71 @@
+/* Barra lateral */
+#sidebar {
+  width: 82px; /* Largura da barra lateral quando fechada */
+  background-color: #ffffff0e;
+  color: white;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.5s;
+  z-index: 2;
+  border-right: 2px solid rgba(43, 39, 39, 0.356);
+}
+
+#sidebar.open-sidebar {
+  width: 250px; /* Largura da barra lateral quando aberta */
+}
+
+/* Conteúdo principal */
+#main_content {
+  margin-left: 82px; /* Espaço para a barra lateral fechada */
+  padding: 20px;
+  transition: margin-left 0.5s; /* Suaviza a mudança da margem */
+}
+
+#sidebar.open-sidebar + #main_content {
+  margin-left: 250px; /* Ajusta a margem do conteúdo quando a barra lateral está aberta */
+}
+
+/* Outros estilos */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.search-bar button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.rectangle-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+}
+
+.rectangle-button i {
+  margin-left: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tittle {
+  font-size: 2em;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,147 @@
+/* Barra Lateral */
+#sidebar {
+    width: 82px; /* Largura reduzida quando fechado */
+    background-color: #ffffff0e;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(4000px);
+    border-right: 2px solid rgba(43, 39, 39, 0.356);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: width 0.5s ease; /* Suaviza a mudança de largura */
+    z-index: 2;
+}
+
+/* Barra Lateral quando expandida */
+#sidebar.open-sidebar {
+    width: 250px; /* Largura aumentada quando aberto */
+}
+
+#sidebar_content {
+    padding: 12px;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.side-item.active {
+    background-color: #9c879871;
+}
+
+.side-item:hover:not(.active) {
+    background-color: transparent;
+    border-right: 2px solid rgba(255, 255, 255, 0.37);
+    box-shadow: 0 0 10px rgba(235, 219, 219, 0.5);
+}
+
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.side-item.active a {
+    color: #b2b4b8;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.item-description {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width 0.6s;
+    height: 0;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+#logout {
+    border-top: 1px solid #e3e9f7;
+    padding: 12px;
+}
+
+#logout_btn {
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+/* Botão para abrir e fechar a barra lateral */
+#open_btn {
+    position: absolute;
+    top: 30px;
+    right: -15px; /* Ajuste conforme necessário para se alinhar corretamente */
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#open_btn_icon {
+    transition: transform 0.3s ease;
+    font-size: 16px; /* Ajuste o tamanho do ícone */
+}
+
+#sidebar.open-sidebar #open_btn_icon {
+    transform: rotate(180deg);
+}
+
+/* Conteúdo Principal */
+#main_content {
+    margin-left: 82px; /* Espaço para a barra lateral minimizada */
+    padding: 20px;
+    transition: margin-left 0.5s ease; /* Suaviza a mudança de margem */
+}
+
+#sidebar.open-sidebar ~ #main_content {
+    margin-left: 250px; /* Ajusta o conteúdo principal quando a barra lateral está expandida */
+}
